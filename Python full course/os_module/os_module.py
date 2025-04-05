@@ -1,6 +1,6 @@
 import os
 
-path = "C:\\Users\\windows\\Desktop\\Programming projects\\Bro-Code-tutorials\\Python full course\\info.txt"
+path = "/Python full course/info.txt"
 
 if os.path.exists(path):
 
