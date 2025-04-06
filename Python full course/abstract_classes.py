@@ -3,7 +3,7 @@
 # an implementation.
 
 # An abstract class prevents an user from creating an object of that class.
-# It compels a user to override abstract methods in a child class.
+# It compels the user to override the abstract methods in a child class.
 
 
 class Vehicle:
@@ -58,8 +58,8 @@ except TypeError as te:
 print("\n--------------------------\n")
 
 
-# In my abstract "ABC" class, I need at least one abstract method, otherwise I will
-# be able to create objects from it:
+# In my abstract "ABC" class, I need at least one abstract method,
+# otherwise I will be able to create objects from it:
 
 class Vehicle(ABC):
 
