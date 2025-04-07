@@ -18,7 +18,7 @@
 #   - I/O bound: program or task that spends most of it's time waiting for
 #     external events (user input, web scraping...)
 #     Better to use MULTITHREADING: multiple threads running concurrenly, but
-#     not trully in parallel.
+#     not truly in parallel.
 
 import threading
 import time
@@ -28,15 +28,15 @@ print("-----------------------\n")
 # I can count the number of threads that are currently running in the background.
 # Whenever I run a program, I have one thread that is running in charge of executing
 # my program:
-print(threading.active_count())  # I should have 1 thread active now.
+print(threading.active_count())  # I should have only one thread active now.
 print("----------")
-print(threading.enumerate())  # The "MainThread"
+print(threading.enumerate())  # I should have only the "MainThread"
 
 
 print("\n-----------------------\n")
 
 
-# Sequential code:
+# SEQUENTIAL code:
 
 def eat_breakfast():
     time.sleep(3)
@@ -63,7 +63,7 @@ print(f"\nThis SEQUENTIAL code took {int(time.time() - starting_time)} seconds t
 print("\n-----------------------\n")
 
 
-# Concurrent code (create three other threads while the main thread runs in
+# CONCURRENT code (create three other threads while the main thread runs in
 # the background to complete the rest of the program):
 
 def eat_breakfast():

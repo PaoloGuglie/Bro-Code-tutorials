@@ -22,7 +22,7 @@ def main():
     # Start the process
     a.start()
 
-    # Important to add a process synchronization so that the main process waits
+    # Important to add process synchronization so that the main process waits
     # for the child process to finish before continuing
     a.join()
 
@@ -34,12 +34,13 @@ def main():
 
 if __name__ == '__main__':
 
-    # I need this in Windows because, when I run a program, I have a "main" process
-    # that is running. If I create a child process from that process it's going
-    # to copy the module that created it and the child process would create its own
-    # children processes and so on...
+    # I need __name__ == '__main__' in Windows because, when I run a program,
+    # I have a "main" process that is running. If I create a child process from
+    # that process, it's going to copy the module that created it and, without this,
+    # the child process would create its own children processes and so on...
+    # (re-running the same code infinitely)
 
-    # By creating this, when I create a child process, it will copy the module, but
-    # it will not execute it.
+    # By using __name__ == '__main__', when I create a child process,
+    # it will copy the module, but it will not execute it.
 
     main()
